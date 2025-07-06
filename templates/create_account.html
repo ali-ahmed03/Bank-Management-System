@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+    <div class="mb-3">
+        <label>Account No</label>
+        <input type="number" name="accNo" required class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Name</label>
+        <input type="text" name="name" required class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Type (S/C)</label>
+        <input type="text" name="acc_type" required class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Initial Deposit</label>
+        <input type="number" name="deposit" required class="form-control">
+    </div>
+    <button class="btn btn-success">Create</button>
+</form>
+{% endblock %}
+

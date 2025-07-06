@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Account No</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Balance</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for acc in accounts %}
+        <tr>
+            <td>{{ acc.accNo }}</td>
+            <td>{{ acc.name }}</td>
+            <td>{{ acc.type }}</td>
+            <td>{{ acc.deposit }}</td>
+            <td>
+                <a href="/modify/{{ acc.accNo }}" class="btn btn-sm btn-warning">Modify</a>
+                <a href="/delete/{{ acc.accNo }}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

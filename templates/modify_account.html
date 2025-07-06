@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+    <div class="mb-3">
+        <label>New Account No</label>
+        <input type="number" name="accNo" value="{{ account.accNo }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Account Holder Name</label>
+        <input type="text" name="name" value="{{ account.name }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Account Type</label>
+        <select name="acc_type" class="form-select">
+            <option value="Saving" {% if account.type == 'Saving' %}selected{% endif %}>Saving</option>
+            <option value="Current" {% if account.type == 'Current' %}selected{% endif %}>Current</option>
+        </select>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
